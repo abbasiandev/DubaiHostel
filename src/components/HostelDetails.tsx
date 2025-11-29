@@ -5,7 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Star, MapPin, Wifi, Coffee, Car, Shield, Phone, Calendar, Users } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
-import { Hostel } from '@/data/hostels';
+import { RoomType } from '@/data/hostels';
 
 const amenityIcons: { [key: string]: any } = {
   wifi: Wifi,
@@ -15,7 +15,7 @@ const amenityIcons: { [key: string]: any } = {
 };
 
 interface HostelDetailsProps {
-  hostel: Hostel;
+  hostel: RoomType;
 }
 
 export default function HostelDetails({ hostel }: HostelDetailsProps) {
