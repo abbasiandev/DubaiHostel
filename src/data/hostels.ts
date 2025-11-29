@@ -253,10 +253,7 @@ export const roomTypes: RoomType[] = [
       "دسترسی ۲۴ ساعته"
     ],
     available: true,
-    size: 10,
-    monthlyPrice: 900,
-    established: 2025,
-    landmark: "Opposite Malabar Supermarket"
+    size: 10
   }
 ];
 
