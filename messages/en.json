@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "home": "Home",
+    "rooms": "Rooms & Rates",
+    "amenities": "Amenities",
+    "gallery": "Gallery",
+    "location": "Location",
+    "about": "About",
+    "contact": "Contact",
+    "book": "Book Now"
+  },
+  "hero": {
+    "title": "Iranian Hostel Dubai",
+    "subtitle": "Your Home Away From Home in Naif District", 
+    "description": "Experience authentic hospitality and modern comfort near Baniyas Metro, opposite Malabar Supermarket in Dubai's historic Naif area",
+    "cta": "Check Availability",
+    "ctaSecondary": "Virtual Tour"
+  },
+  "rooms": {
+    "title": "Our Accommodations",
+    "subtitle": "Choose from our range of comfortable rooms designed for every budget",
+    "viewDetails": "View Details",
+    "bookNow": "Book This Room",
+    "amenities": "Room Amenities",
+    "capacity": "Capacity",
+    "price": "Starting from",
+    "perNight": "per night",
+    "availability": "Check Availability"
+  },
+  "amenities": {
+    "title": "Hostel Amenities",
+    "subtitle": "Everything you need for a comfortable stay",
+    "categories": {
+      "essential": "Essential Services",
+      "comfort": "Comfort & Convenience",
+      "connectivity": "Connectivity",
+      "safety": "Safety & Security"
+    }
+  },
+  "location": {
+    "title": "Prime Location in Naif",
+    "subtitle": "Discover Dubai from the heart of the city",
+    "neighborhood": "About Naif District",
+    "nearby": "Nearby Attractions",
+    "transport": "Transportation"
+  },
+  "booking": {
+    "title": "Book Your Stay",
+    "checkIn": "Check-in Date",
+    "checkOut": "Check-out Date",
+    "guests": "Guests",
+    "searchRooms": "Search Available Rooms",
+    "total": "Total",
+    "taxes": "Includes taxes and fees",
+    "confirmBooking": "Confirm Booking"
+  },
+  "footer": {
+    "description": "Iranian Hostel Dubai - Your trusted accommodation in Naif District since 2025",
+    "quickLinks": "Quick Links",
+    "contact": "Contact Information",
+    "followUs": "Follow Us",
+    "newsletter": "Subscribe to our newsletter for special offers"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "tryAgain": "Try Again",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "showMore": "Show More",
+    "showLess": "Show Less"
+  }
+}
