@@ -133,7 +133,7 @@ export default function CommentsSection() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, threshold: 0.1 }}
+        viewport={{ once: true }}
         className="space-y-6"
       >
         {sampleComments.map((comment, index) => (
