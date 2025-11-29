@@ -163,18 +163,18 @@ export default function HostelDetails({ hostel }: HostelDetailsProps) {
               
               <div className="flex items-center text-white/70 mb-6">
                 <MapPin className="w-5 h-5 mr-2" />
-                <span>{locale === 'fa' ? hostel.locationAr : hostel.location}</span>
+                <span>{locale === 'fa' ? 'نزدیک مترو بنیاس، مقابل سوپرمارکت مالابار، نایف' : 'Near Baniyas Metro, opposite Malabar Supermarket, Naif'}</span>
               </div>
 
               <p className="text-white/80 text-lg leading-relaxed mb-8">
-                {locale === 'fa' ? hostel.descriptionAr : hostel.description}
+  {locale === 'fa' ? 'اتاق راحت در هاستل ایرانی دبی با امکانات مدرن و دسترسی آسان به مترو و بازارهای سنتی.' : 'Comfortable room at Iranian Hostel Dubai with modern amenities and easy access to metro and traditional markets.'}
               </p>
 
               {/* Features */}
               <div>
                 <h3 className="text-xl font-semibold text-white mb-4">Features & Services</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {(locale === 'fa' ? hostel.featuresAr : hostel.features).map((feature, index) => (
+                  {['WiFi', 'AC', 'Shared Kitchen', '24/7 Reception', 'Near Metro', 'Safe Location'].map((feature, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
