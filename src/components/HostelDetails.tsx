@@ -28,7 +28,7 @@ export default function HostelDetails({ hostel }: HostelDetailsProps) {
       ? `سلام! می‌خواهم ${hostel.nameAr || hostel.name} را رزرو کنم. لطفاً اطلاعات بیشتری ارسال کنید.`
       : `Hi! I would like to book ${hostel.name}. Please send me more information.`;
     
-    const whatsappUrl = `https://wa.me/${hostel.whatsappNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/971521900874?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
