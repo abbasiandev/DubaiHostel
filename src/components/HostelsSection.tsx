@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { getFeaturedHostels } from '@/data/hostels';
-import HostelCard from './HostelCard';
+import RoomCard from './RoomCard';
 import { useInView } from 'react-intersection-observer';
 
 export default function HostelsSection() {
@@ -47,8 +47,8 @@ export default function HostelsSection() {
         animate={inView ? "visible" : "hidden"}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
-        {featuredHostels.map((hostel, index) => (
-          <HostelCard key={hostel.id} hostel={hostel} index={index} />
+        {featuredHostels.map((room, index) => (
+          <RoomCard key={room.id} room={room} index={index} />
         ))}
       </motion.div>
     </section>
