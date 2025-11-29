@@ -72,7 +72,7 @@ export default function HostelDetails({ hostel }: HostelDetailsProps) {
                 {/* Rating Badge */}
                 <div className="absolute top-4 right-4 glass-dark rounded-full px-4 py-2 flex items-center space-x-2">
                   <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                  <span className="text-white font-semibold">{hostel.rating}</span>
+                  <span className="text-white font-semibold">4.6</span>
                 </div>
               </div>
 
