@@ -2,8 +2,6 @@ export interface RoomType {
   id: string;
   name: string;
   nameAr: string;
-  type: 'dormitory' | 'private' | 'family';
-  capacity: number;
   price: number;
   originalPrice?: number;
   image: string;
@@ -25,20 +23,6 @@ export interface Amenity {
   category: 'essential' | 'comfort' | 'connectivity' | 'safety';
   description: string;
   descriptionAr: string;
-}
-
-export interface Review {
-  id: string;
-  guestName: string;
-  guestNameAr?: string;
-  nationality: string;
-  rating: number;
-  comment: string;
-  commentAr?: string;
-  date: string;
-  roomType: string;
-  verified: boolean;
-  photos?: string[];
 }
 
 export interface HostelInfo {
@@ -76,12 +60,12 @@ export const iranianHostel: HostelInfo = {
   name: "Iranian Hostel Dubai",
   nameAr: "هاستل ایرانی دبی",
   description: "Experience authentic Persian hospitality near Baniyas Metro, opposite Malabar Supermarket in Dubai's historic Naif district. Our family-run hostel offers comfortable accommodations with shared facilities and meals available via WhatsApp contact.",
-  descriptionAr: "تجربه مهمان‌نوازی اصیل ایرانی نزدیک مترو بنیاس، مقابل سوپرمارکت مالابار در منطقه تاریخی نایف دبی. هاستل خانوادگی ما اقامت راحت با امکانات مشترک و غذا از طریق تماس واتساپ ارائه می‌دهد.",
+  descriptionAr: "تجربه مهمان‌نوازی اصیل ایرانی نزدیک مترو بنی یاس، مقابل سوپرمارکت ملبار در منطقه تاریخی نایف دبی. هاستل خانوادگی ما اقامت راحت با امکانات مشترک و غذا از طریق تماس واتساپ ارائه می‌دهد.",
   location: {
     address: "Near Baniyas Metro, opposite Malabar Supermarket, Naif District, Deira",
-    addressAr: "نزدیک مترو بنیاس، مقابل سوپرمارکت مالابار، منطقه نایف، دیره",
+    addressAr: "نزدیک مترو بنی یاس، مقابل سوپرمارکت ملبار، منطقه نایف، دیره",
     district: "Naif, Deira (opposite Malabar Supermarket)",
-    districtAr: "نایف، دیره (مقابل سوپرمارکت مالابار)",
+    districtAr: "نایف، دیره (مقابل سوپرمارکت ملبار)",
     coordinates: {
       lat: 25.2685,
       lng: 55.3048
@@ -99,18 +83,12 @@ export const iranianHostel: HostelInfo = {
   checkOut: "11:00",
   policies: {
     en: [
-      "Check-in: 2:00 PM - Check-out: 11:00 AM",
       "Valid ID required for all guests",
-      "No smoking inside rooms (smoking area available)",
-      "Quiet hours: 10:00 PM - 8:00 AM",
       "24/7 front desk service",
       "Free cancellation up to 24 hours before arrival"
     ],
     fa: [
-      "ساعت ورود: ۱۴:۰۰ - ساعت خروج: ۱۱:۰۰",
       "مدرک شناسایی معتبر برای همه مهمانان لازم است",
-      "سیگار کشیدن در اتاق‌ها ممنوع (منطقه سیگار در دسترس)",
-      "ساعات سکوت: ۲۲:۰۰ - ۰۸:۰۰",
       "خدمات پذیرش ۲۴ ساعته",
       "لغو رایگان تا ۲۴ ساعت قبل از ورود"
     ]
@@ -119,13 +97,11 @@ export const iranianHostel: HostelInfo = {
 
 export const roomTypes: RoomType[] = [
   {
-    id: "shared-dorm-4",
-    name: "4-bed mixed dorm",
-    nameAr: "خوابگاه مختلط ۴ تخته",
-    type: "dormitory",
-    capacity: 4,
-    price: 45,
-    originalPrice: 55,
+    id: "shared-dorm-8",
+    name: "8-bed mixed dorm",
+    nameAr: "اتاق ۸ تخته",
+    price: 50,
+    originalPrice: 70,
     image: "https://drive.google.com/uc?export=view&id=1QS5UTT97-YhSVEnbGTXHcSTzEmRC8BoK",
     images: [
       "https://drive.google.com/uc?export=view&id=1QS5UTT97-YhSVEnbGTXHcSTzEmRC8BoK",
@@ -141,11 +117,9 @@ export const roomTypes: RoomType[] = [
     size: 16
   },
   {
-    id: "shared-dorm-6",
-    name: "6-bed mixed dorm",
-    nameAr: "خوابگاه مختلط ۶ تخته",
-    type: "dormitory",
-    capacity: 6,
+    id: "shared-dorm-10",
+    name: "10-bed mixed dorm",
+    nameAr: "اتاق ۱۰ تخته",
     price: 35,
     image: "https://drive.google.com/uc?export=view&id=1rilfpKK2jtEFg4pwIO49AdDzVe_84U2G",
     images: [
@@ -161,31 +135,9 @@ export const roomTypes: RoomType[] = [
     size: 20
   },
   {
-    id: "female-dorm-4",
-    name: "Female-only 4-bed dorm",
-    nameAr: "خوابگاه ویژه بانوان ۴ تخته",
-    type: "dormitory",
-    capacity: 4,
-    price: 50,
-    image: "https://drive.google.com/uc?export=view&id=1ptr0Vi97I-XsM5IG4uP9WpnWhXmWK_Ml",
-    images: [
-      "https://drive.google.com/uc?export=view&id=1ptr0Vi97I-XsM5IG4uP9WpnWhXmWK_Ml",
-      "https://drive.google.com/uc?export=view&id=1phZfkeZZ8H1EgeHYdMLrBlFh385m-yZ6"
-    ],
-    amenities: ["wifi", "ac", "locker", "reading_light", "power_outlet", "hair_dryer"],
-    description: "A safe and comfortable stay exclusively for female travelers. Enhanced privacy and security with dedicated facilities.",
-    descriptionAr: "اقامت امن و راحت منحصراً برای مسافران خانم. حریم خصوصی و امنیت بهبود یافته با امکانات اختصاصی.",
-    features: ["Female only", "Enhanced security", "Private facilities", "Hair dryer included", "Safe environment"],
-    featuresAr: ["ویژه بانوان", "امنیت بالا", "امکانات خصوصی", "سشوار موی شامل", "محیط امن"],
-    available: true,
-    size: 16
-  },
-  {
     id: "private-single",
     name: "Private single room",
     nameAr: "اتاق خصوصی یک نفره",
-    type: "private",
-    capacity: 1,
     price: 85,
     image: "https://drive.google.com/uc?export=view&id=1IgVAv9kpomS0BU268551CmYQ82NJhS4v",
     images: [
@@ -204,8 +156,6 @@ export const roomTypes: RoomType[] = [
     id: "private-double",
     name: "Private double room",
     nameAr: "اتاق خصوصی دو نفره",
-    type: "private",
-    capacity: 2,
     price: 120,
     image: "https://drive.google.com/uc?export=view&id=11D5uUh4unq7W4zuJR7PWCYbTPwZHtZDv",
     images: [
@@ -220,41 +170,6 @@ export const roomTypes: RoomType[] = [
     available: true,
     size: 18
   },
-  {
-    id: "private-room-naif",
-    name: "Private Room - Naif",
-    nameAr: "اتاق خصوصی - نایف",
-    type: "private",
-    capacity: 1,
-    price: 50,
-    image: "https://drive.google.com/uc?export=view&id=1ptr0Vi97I-XsM5IG4uP9WpnWhXmWK_Ml",
-    images: [
-      "https://drive.google.com/uc?export=view&id=1ptr0Vi97I-XsM5IG4uP9WpnWhXmWK_Ml",
-      "https://drive.google.com/uc?export=view&id=1phZfkeZZ8H1EgeHYdMLrBlFh385m-yZ6",
-      "https://drive.google.com/uc?export=view&id=1IgVAv9kpomS0BU268551CmYQ82NJhS4v"
-    ],
-    amenities: ["wifi", "ac", "shared_bathroom", "food_service", "metro_access", "supermarket_opposite"],
-    description: "Prime location opposite Malabar Supermarket, just 2 minutes from Baniyas Metro. Perfect for budget travelers seeking convenience in the heart of traditional Dubai's Naif district.",
-    descriptionAr: "موقعیت عالی مقابل سوپرمارکت مالابار، تنها ۲ دقیقه از مترو بنیاس. عالی برای مسافران با بودجه محدود که راحتی را در قلب منطقه سنتی نایف دبی می‌خواهند.",
-    features: [
-      "Opposite Malabar Supermarket", 
-      "2-min walk to Baniyas Metro", 
-      "Daily/Monthly rates available",
-      "Food service via WhatsApp",
-      "Central Naif location",
-      "24/7 access"
-    ],
-    featuresAr: [
-      "مقابل سوپرمارکت مالابار",
-      "۲ دقیقه پیاده‌روی تا مترو بنیاس", 
-      "نرخ‌های روزانه/ماهانه موجود",
-      "سرویس غذا از طریق واتساپ",
-      "موقعیت مرکزی نایف",
-      "دسترسی ۲۴ ساعته"
-    ],
-    available: true,
-    size: 10
-  }
 ];
 
 export const amenities: Amenity[] = [
@@ -265,24 +180,19 @@ export const amenities: Amenity[] = [
   { id: "power_outlet", name: "Power Outlets", nameAr: "پریز برق", icon: "Zap", category: "essential", description: "Device charging", descriptionAr: "شارژ دستگاه" },
   { id: "shared_bathroom", name: "Shared Bathroom", nameAr: "حمام مشترک", icon: "Bath", category: "essential", description: "Clean facilities", descriptionAr: "امکانات تمیز" },
   { id: "food_service", name: "Food Service", nameAr: "سرویس غذا", icon: "Utensils", category: "comfort", description: "Available via WhatsApp", descriptionAr: "از طریق واتساپ" },
-  { id: "metro_access", name: "Metro Access", nameAr: "دسترسی مترو", icon: "Train", category: "connectivity", description: "2-min to Baniyas Metro", descriptionAr: "۲ دقیقه تا مترو بنیاس" },
-  { id: "supermarket_opposite", name: "Supermarket Opposite", nameAr: "سوپرمارکت روبرو", icon: "ShoppingBag", category: "comfort", description: "Malabar Supermarket", descriptionAr: "سوپرمارکت مالابار" },
+  { id: "metro_access", name: "Metro Access", nameAr: "دسترسی مترو", icon: "Train", category: "connectivity", description: "2-min to Baniyas Metro", descriptionAr: "۳ دقیقه تا مترو بنی یاس" },
+  { id: "metro_access", name: "Metro Access", nameAr: "دسترسی مترو", icon: "Train", category: "connectivity", description: "2-min to Baniyas Metro", descriptionAr: "۳ دقیقه تا مترو بنی یاس" },
+  { id: "supermarket_opposite", name: "Supermarket Opposite", nameAr: "سوپرمارکت روبرو", icon: "ShoppingBag", category: "comfort", description: "Malabar Supermarket", descriptionAr: "سوپرمارکت ملبارملبار" },
 ];
 
-// Utility functions
 export const getRoomById = (id: string): RoomType | undefined => {
   return roomTypes.find(room => room.id === id);
-};
-
-export const getRoomsByType = (type: string): RoomType[] => {
-  return roomTypes.filter(room => room.type === type);
 };
 
 export const getAvailableRooms = (): RoomType[] => {
   return roomTypes.filter(room => room.available);
 };
 
-// Legacy exports for backward compatibility
 export const hostels = roomTypes;
 export const getHostelById = getRoomById;
 export const getFeaturedHostels = getAvailableRooms;
