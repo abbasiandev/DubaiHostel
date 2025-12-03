@@ -33,6 +33,23 @@
     "perNight": "per night",
     "availability": "Check Availability"
   },
+  "roomCard": {
+    "bookNow": "Book Now",
+    "whatsappMessage": "Hi! I'm interested in {roomName}. Could you please provide availability and booking information?"
+  },
+  "reviews": {
+    "title": "Guest Reviews",
+    "reviewsCount": "reviews",
+    "reply": "Reply",
+    "helpful": "Helpful",
+    "viewAll": "View All Reviews",
+    "writeReview": "Write a Review",
+    "rating": "Rating",
+    "cleanliness": "Cleanliness",
+    "staff": "Staff",
+    "facilities": "Facilities",
+    "value": "Value"
+  },
   "amenities": {
     "title": "Hostel Amenities",
     "subtitle": "Everything you need for a comfortable stay",
@@ -48,7 +65,8 @@
     "subtitle": "Discover Dubai from the heart of the city",
     "neighborhood": "About Naif District",
     "nearby": "Nearby Attractions",
-    "transport": "Transportation"
+    "transport": "Transportation",
+    "viewMap": "View Interactive Map"
   },
   "booking": {
     "title": "Book Your Stay",
@@ -96,6 +114,31 @@
     "title": "Special Accommodation in Naif",
     "subtitle": "Since Iranian Hostel Dubai has no private rooms, this nearby private room opposite Malabar Supermarket",
     "badge": "🌟 Special Offer - Prime Location"
+  },
+  "privateRoom": {
+    "whatsappMessage": "Hi! I'm interested in the Private Room in Naif opposite Malabar Supermarket. Please send details about availability and food service options.",
+    "topBadge": "🏠 Private Room near Iranian Hostel Dubai",
+    "altText": "Private Room Naif",
+    "priceDaily": "per day",
+    "priceMonthly": "monthly",
+    "since": "Since 2025",
+    "title": "Private Room - Naif",
+    "location": "Opposite Malabar Supermarket, near Baniyas Metro",
+    "description": "Affordable private room in Naif, opposite Malabar Supermarket. Since Iranian Hostel Dubai has no private rooms, this is perfect for those needing privacy. For meals, you must contact via WhatsApp.",
+    "features": {
+      "supermarket": "Opposite Supermarket",
+      "metro": "Baniyas Metro",
+      "metroDistance": "2-min walk",
+      "rates": "Flexible Rates",
+      "ratesType": "Daily/Monthly",
+      "foodService": "Food Service",
+      "foodServiceType": "via WhatsApp"
+    },
+    "buttons": {
+      "whatsapp": "WhatsApp Contact",
+      "moreDetails": "More Details"
+    },
+    "note": "💡 Strategic location in the heart of traditional Dubai"
   },
   "about": {
     "title": "About Dubai Hostels",

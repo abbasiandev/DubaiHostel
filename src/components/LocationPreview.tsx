@@ -213,7 +213,7 @@ export default function LocationPreview() {
             className="glass-card rounded-2xl px-8 py-4 text-white font-semibold hover:bg-white/20 transition-all flex items-center gap-3 mx-auto"
           >
             <MapPin className="w-5 h-5" />
-            {locale === 'fa' ? 'مشاهده نقشه تعاملی' : 'View Interactive Map'}
+            {t('viewMap')}
           </motion.button>
         </Link>
       </motion.div>

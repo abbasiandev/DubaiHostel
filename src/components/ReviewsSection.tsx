@@ -157,7 +157,7 @@ export default function ReviewsSection() {
                 ))}
               </div>
               <div className="text-white/70 text-sm">
-                {iranianHostel.totalReviews} {locale === 'fa' ? 'نظر' : 'reviews'}
+                {iranianHostel.totalReviews} {t('reviewsCount')}
               </div>
             </div>
           </div>
@@ -296,7 +296,7 @@ export default function ReviewsSection() {
                   >
                     <MessageCircle className="w-4 h-4" />
                     <span className="text-sm">
-                      {locale === 'fa' ? 'پاسخ' : 'Reply'}
+                      {t('reply')}
                     </span>
                   </motion.button>
 
@@ -307,7 +307,7 @@ export default function ReviewsSection() {
                   >
                     <ThumbsUp className="w-4 h-4" />
                     <span className="text-sm">
-                      {locale === 'fa' ? 'مفید' : 'Helpful'}
+                      {t('helpful')}
                     </span>
                   </motion.button>
                 </div>
@@ -330,7 +330,7 @@ export default function ReviewsSection() {
             whileTap={{ scale: 0.95 }}
             className="glass-card rounded-2xl px-8 py-4 text-white font-semibold hover:bg-white/20 transition-all"
           >
-            {locale === 'fa' ? 'مشاهده همه نظرات' : 'View All Reviews'}
+            {t('viewAll')}
           </motion.button>
         </Link>
         

@@ -34,6 +34,7 @@ const amenityIcons: { [key: string]: any } = {
 
 export default function RoomCard({ room, index }: RoomCardProps) {
     const t = useTranslations('rooms');
+    const tCard = useTranslations('roomCard');
     const locale = useLocale();
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
@@ -74,10 +75,9 @@ export default function RoomCard({ room, index }: RoomCardProps) {
         const bedInfo = room.bedOptions
             ? ` (${room.bedOptions[selectedBedOption].beds}-bed)`
             : '';
-
-        const message = locale === 'fa'
-            ? `سلام! می‌خواهم ${room.nameAr}${bedInfo} را در هاستل ایرانی رزرو کنم. لطفاً اطلاعات بیشتری ارسال کنید.`
-            : `Hi! I would like to book ${room.name}${bedInfo} at Iranian Hostel. Please send me more information.`;
+        
+        const roomName = locale === 'fa' ? room.nameAr : room.name;
+        const message = tCard('whatsappMessage').replace('{roomName}', `${roomName}${bedInfo}`);
 
         const whatsappUrl = `https://wa.me/971521900874?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
@@ -287,7 +287,7 @@ export default function RoomCard({ room, index }: RoomCardProps) {
                     className="w-full bg-green-500 rounded-xl py-3 text-white text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
                 >
                     <Phone className="w-4 h-4" />
-                    {locale === 'fa' ? 'الان رزرو کنید' : 'Book Now'}
+                    {tCard('bookNow')}
                 </motion.button>
             </div>
         </motion.div>
