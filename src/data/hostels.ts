@@ -12,7 +12,15 @@ export interface RoomType {
     features: string[];
     featuresAr: string[];
     available: boolean;
-    size: number; // in sqm
+    size: number;
+    bedOptions?: BedOption[];
+}
+
+export interface BedOption {
+    beds: number;
+    priceModifier?: number;
+    label: string;
+    labelAr: string;
 }
 
 export interface Amenity {
@@ -97,9 +105,9 @@ export const iranianHostel: HostelInfo = {
 
 export const roomTypes: RoomType[] = [
     {
-        id: "shared-dorm-8",
-        name: "8-Bed Shared Dorm",
-        nameAr: "اتاق مشترک هشت تخته",
+        id: "shared-dorm",
+        name: "Shared Dorm",
+        nameAr: "اتاق مشترک",
         price: 50,
         image: "https://drive.google.com/uc?export=view&id=1bZ6zpCD7BQ-wUqETiHKjsLvPd3Na_PWU",
         images: [
@@ -113,36 +121,45 @@ export const roomTypes: RoomType[] = [
             "https://drive.google.com/uc?export=view&id=1cPnWqJz9bKzofDKUBNSrC6CzZWRJ4ZNg",
             "https://drive.google.com/uc?export=view&id=1IgVAv9kpomS0BU268551CmYQ82NJhS4v"
         ],
-        amenities: ["wifi", "ac", "locker", "reading_light", "power_outlet", "shared_bathroom"],
-        description: "Comfortable 8-bed shared accommodation with modern amenities. Each bed comes with privacy curtains, personal reading lights, and secure lockers. Perfect for solo travelers and backpackers looking to meet new people.",
-        descriptionAr: "اقامت مشترک راحت با ۸ تخت و امکانات مدرن. هر تخت دارای پرده‌های حریم خصوصی، چراغ مطالعه شخصی و کمدهای امن است. عالی برای مسافران انفرادی و کوله‌گردان که می‌خواهند افراد جدید را ملاقات کنند.",
-        features: ["Privacy curtains", "Personal reading light", "Secure locker", "Shared bathroom", "24/7 access", "Common area"],
-        featuresAr: ["پرده‌های حریم خصوصی", "چراغ مطالعه شخصی", "کمد امن", "حمام مشترک", "دسترسی ۲۴ ساعته", "فضای عمومی"],
-        available: true,
-        size: 20
-    },
-    {
-        id: "shared-dorm-10",
-        name: "10-Bed Shared Dorm",
-        nameAr: "اتاق مشترک ده تخته",
-        price: 50,
-        image: "https://drive.google.com/uc?export=view&id=1bZ6zpCD7BQ-wUqETiHKjsLvPd3Na_PWU",
-        images: [
-            "https://drive.google.com/uc?export=view&id=1bZ6zpCD7BQ-wUqETiHKjsLvPd3Na_PWU",
-            "https://drive.google.com/uc?export=view&id=1rilfpKK2jtEFg4pwIO49AdDzVe_84U2G",
-            "https://drive.google.com/uc?export=view&id=1_9WeCkVvDxvt8y-Un8uT8xKA7-STJTqM",
-            "https://drive.google.com/uc?export=view&id=1ptr0Vi97I-XsM5IG4uP9WpnWhXmWK_Ml",
-            "https://drive.google.com/uc?export=view&id=1phZfkeZZ8H1EgeHYdMLrBlFh385m-yZ6",
-            "https://drive.google.com/uc?export=view&id=1ng67hHIq3jLO_Ig72LXyy4qhMBT-nQwn",
-            "https://drive.google.com/uc?export=view&id=11D5uUh4unq7W4zuJR7PWCYbTPwZHtZDv",
-            "https://drive.google.com/uc?export=view&id=1cPnWqJz9bKzofDKUBNSrC6CzZWRJ4ZNg",
-            "https://drive.google.com/uc?export=view&id=1IgVAv9kpomS0BU268551CmYQ82NJhS4v"
+        bedOptions: [
+            {
+                beds: 8,
+                priceModifier: 0,
+                label: "8-Bed Dorm",
+                labelAr: "هشت تخته"
+            },
+            {
+                beds: 10,
+                priceModifier: 0,
+                label: "10-Bed Dorm",
+                labelAr: "ده تخته"
+            }
         ],
         amenities: ["wifi", "ac", "locker", "reading_light", "power_outlet", "shared_bathroom"],
-        description: "Budget-friendly 10-bed shared accommodation with modern amenities. Each bed has its own storage space and charging port. Great for backpackers and budget travelers seeking affordable comfort.",
-        descriptionAr: "اقامت مشترک مقرون‌به‌صرفه با ۱۰ تخت و امکانات مدرن. هر تخت دارای فضای ذخیره شخصی و پورت شارژ است. عالی برای کوله‌گردان و مسافران با بودجه محدود که به دنبال راحتی مقرون‌به‌صرفه هستند.",
-        features: ["Modern bunk beds", "Personal storage", "Charging ports", "Shared bathroom", "24/7 access", "Common area"],
-        featuresAr: ["تخت‌های مدرن دو طبقه", "فضای ذخیره شخصی", "پورت‌های شارژ", "حمام مشترک", "دسترسی ۲۴ ساعته", "فضای عمومی"],
+        description: "Comfortable shared accommodation with modern amenities. Each bed comes with privacy curtains, personal reading lights, and secure lockers. Perfect for solo travelers and backpackers looking to meet new people. Available in 8-bed and 10-bed configurations.",
+        descriptionAr: "اقامت مشترک راحت با امکانات مدرن. هر تخت دارای پرده‌های حریم خصوصی، چراغ مطالعه شخصی و کمدهای امن است. عالی برای مسافران انفرادی و کوله‌گردان که می‌خواهند افراد جدید را ملاقات کنند. در دو نوع هشت تخته و ده تخته موجود است.",
+        features: [
+            "Privacy curtains",
+            "Personal reading light",
+            "Secure locker",
+            "Shared bathroom",
+            "24/7 access",
+            "Common area",
+            "Modern bunk beds",
+            "Personal storage",
+            "Charging ports"
+        ],
+        featuresAr: [
+            "پرده‌های حریم خصوصی",
+            "چراغ مطالعه شخصی",
+            "کمد امن",
+            "حمام مشترک",
+            "دسترسی ۲۴ ساعته",
+            "فضای عمومی",
+            "تخت‌های مدرن دو طبقه",
+            "فضای ذخیره شخصی",
+            "پورت‌های شارژ"
+        ],
         available: true,
         size: 25
     }
