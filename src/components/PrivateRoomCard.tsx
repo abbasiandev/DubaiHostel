@@ -115,7 +115,7 @@ export default function PrivateRoomCard() {
                 <div className="flex flex-col lg:flex-row">
                     {/* Image Slider Section */}
                     <div
-                        className="lg:w-1/2 relative h-80 cursor-pointer"
+                        className="lg:w-1/2 relative h-100 cursor-pointer"
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                         onClick={() => openLightbox(currentImageIndex)}

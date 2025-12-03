@@ -64,8 +64,8 @@ export const iranianHostel: HostelInfo = {
     location: {
         address: "Near Baniyas Metro, opposite Malabar Supermarket, Naif District, Deira",
         addressAr: "نزدیک مترو بنی یاس، مقابل سوپرمارکت ملبار، منطقه نایف، دیره",
-        district: "Naif, Deira (opposite Malabar Supermarket)",
-        districtAr: "نایف، دیره (مقابل سوپرمارکت ملبار)",
+        district: "Deira Area, Bani Yas Square",
+        districtAr: "منطقه دیره میدان بنی یاس",
         coordinates: {
             lat: 25.2685,
             lng: 55.3048

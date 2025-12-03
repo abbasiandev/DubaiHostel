@@ -19,7 +19,7 @@ export default function LocationPreview() {
     {
       icon: ShoppingBag,
       name: 'Malabar Supermarket',
-      nameAr: 'سوپرمارکت مالابار',
+      nameAr: 'سوپرمارکت ملبار',
       distance: '0 min (opposite)',
       distanceAr: '۰ دقیقه (روبرو)',
       description: 'Major supermarket opposite hostel',
@@ -28,9 +28,9 @@ export default function LocationPreview() {
     {
       icon: Train,
       name: 'Baniyas Metro',
-      nameAr: 'مترو بنیاس',
-      distance: '2 min walk',
-      distanceAr: '۲ دقیقه پیاده‌روی',
+      nameAr: 'مترو بنی یاس',
+      distance: '3 min walk',
+      distanceAr: '۳ دقیقه پیاده‌روی',
       description: 'Green Line metro station',
       descriptionAr: 'ایستگاه مترو خط سبز'
     },

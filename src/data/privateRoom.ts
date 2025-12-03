@@ -38,11 +38,11 @@ export interface PrivateRoomData {
 export const privateRoomData: PrivateRoomData = {
     location: {
         address: "Naif Road, opposite Malabar Supermarket, near Baniyas Metro",
-        addressAr: "جاده نایف، مقابل سوپرمارکت مالابار، نزدیک مترو بنیاس",
+        addressAr: " نایف، مقابل سوپرمارکت ملبار، نزدیک مترو بنی یاس",
         landmark: "Opposite Malabar Supermarket",
-        landmarkAr: "مقابل سوپرمارکت مالابار",
-        metro: "2-minute walk to Baniyas Metro",
-        metroAr: "۲ دقیقه پیاده‌روی تا مترو بنیاس",
+        landmarkAr: "مقابل سوپرمارکت ملبار",
+        metro: "3-minute walk to Baniyas Metro",
+        metroAr: "۳ دقیقه پیاده‌روی تا مترو بنی یاس",
         coordinates: {
             lat: 25.2685,
             lng: 55.3048
@@ -59,7 +59,7 @@ export const privateRoomData: PrivateRoomData = {
             name: "Private Room - Shared Facilities",
             nameAr: "اتاق خصوصی",
             description: "Affordable private room with shared bathroom and kitchen facilities in the heart of Naif, strategically located opposite Malabar Supermarket.",
-            descriptionAr: "اتاق خصوصی مقرون‌به‌صرفه با سرویس حمام و آشپزخانه مشترک در قلب نایف، واقع در مقابل سوپرمارکت مالابار.",
+            descriptionAr: "اتاق خصوصی مقرون‌به‌صرفه با سرویس حمام و آشپزخانه مشترک در قلب نایف، واقع در مقابل سوپرمارکت ملبار.",
             images: [
                 "https://drive.google.com/uc?export=view&id=1ERBoDU6asyd5NIzxNPfPMPhhEOAGwTIS",
                 "https://drive.google.com/uc?export=view&id=1WN9BzimX0e5GSMsRhGes0XTe7PafvIXq",
@@ -174,15 +174,15 @@ export const nearbyAttractions = {
     ],
     ar: [
         {
-            name: "سوپرمارکت مالابار",
+            name: "سوپرمارکت ملبار",
             description: "سوپرمارکت بزرگ مستقیماً روبرو - راحتی در آستانه خانه شما",
             distance: "۰ دقیقه (روبرو)",
             category: "خرید"
         },
         {
-            name: "ایستگاه مترو بنیاس",
+            name: "ایستگاه مترو بنی یاس",
             description: "ایستگاه مترو خط سبز برای اتصال آسان به شهر",
-            distance: "۲ دقیقه پیاده‌روی",
+            distance: "۳ دقیقه پیاده‌روی",
             category: "حمل‌ونقل"
         },
         {
@@ -215,8 +215,8 @@ export const marketingContent = {
     },
     ar: {
         headline: "اتاق‌های خصوصی مقرون‌به‌صرفه در موقعیت عالی نایف",
-        subheadline: "مقابل سوپرمارکت مالابار • ۲ دقیقه تا مترو بنیاس • قلب دبی سنتی",
+        subheadline: "مقابل سوپرمارکت ملبار • ۳ دقیقه تا مترو بنی یاس • قلب دبی سنتی",
         callToAction: "از طریق واتساپ برای رزرو و موجودی تماس بگیرید",
-        whatsappMessage: "سلام! من به اتاق‌های خصوصی در نایف مقابل سوپرمارکت مالابار علاقه‌مند هستم. لطفاً جزئیات موجودی را ارسال کنید."
+        whatsappMessage: "سلام! من به اتاق‌های خصوصی در نایف مقابل سوپرمارکت ملبار علاقه‌مند هستم. لطفاً جزئیات موجودی را ارسال کنید."
     }
 };

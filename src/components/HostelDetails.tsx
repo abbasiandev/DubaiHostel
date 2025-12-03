@@ -163,7 +163,7 @@ export default function HostelDetails({ hostel }: HostelDetailsProps) {
               
               <div className="flex items-center text-white/70 mb-6">
                 <MapPin className="w-5 h-5 mr-2" />
-                <span>{locale === 'fa' ? 'نزدیک مترو بنیاس، مقابل سوپرمارکت مالابار، نایف' : 'Near Baniyas Metro, opposite Malabar Supermarket, Naif'}</span>
+                <span>{locale === 'fa' ? 'نزدیک مترو بنی یاس، مقابل سوپرمارکت ملبار، نایف' : 'Near Baniyas Metro, opposite Malabar Supermarket, Naif'}</span>
               </div>
 
               <p className="text-white/80 text-lg leading-relaxed mb-8">
