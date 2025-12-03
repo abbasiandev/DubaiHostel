@@ -2,13 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Globe } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const t = useTranslations('nav');
   const locale = useLocale();
@@ -23,15 +22,7 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { key: 'home', href: `/${locale}` },
-    { key: 'rooms', href: `/${locale}/rooms` },
-    { key: 'amenities', href: `/${locale}/amenities` },
-    { key: 'gallery', href: `/${locale}/gallery` },
-    { key: 'location', href: `/${locale}/location` },
-    { key: 'about', href: `/${locale}/about` },
-    { key: 'contact', href: `/${locale}/contact` },
-  ];
+  const navItems: { key: string; href: string }[] = [];
 
   const toggleLanguage = () => {
     const newLocale = locale === 'en' ? 'fa' : 'en';
@@ -122,55 +113,23 @@ export default function Navigation() {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              onClick={toggleLanguage}
-              className="glass rounded-lg p-2 text-white"
+              onClick={handleBookNowClick}
+              className="glass-accent rounded-xl px-4 py-2 text-green-400 hover:text-green-300 transition-colors font-semibold"
             >
-              <Globe className="w-4 h-4" />
+              {t('book')}
             </motion.button>
             
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={toggleLanguage}
               className="glass rounded-lg p-2 text-white"
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              <Globe className="w-4 h-4" />
             </motion.button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden glass-card rounded-lg mt-2 overflow-hidden"
-            >
-              <div className="px-4 py-4 space-y-3">
-                {navItems.map((item, index) => (
-                  <motion.div
-                    key={item.key}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`block text-white/90 hover:text-white transition-colors duration-200 font-medium py-2 ${
-                        pathname === item.href ? 'text-white' : ''
-                      }`}
-                    >
-                      {t(item.key as any)}
-                    </Link>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </motion.nav>
   );

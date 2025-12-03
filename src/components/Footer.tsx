@@ -15,13 +15,6 @@ export default function Footer() {
     { icon: Twitter, href: '#', label: 'Twitter' },
   ];
 
-  const quickLinks = [
-    { key: 'home', href: `/${locale}` },
-    { key: 'hostels', href: `/${locale}/hostels` },
-    { key: 'about', href: `/${locale}/about` },
-    { key: 'contact', href: `/${locale}/contact` },
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -81,7 +74,7 @@ export default function Footer() {
         className="relative z-10 glass-card mx-4 mb-8 rounded-3xl"
       >
         <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Brand Section */}
             <motion.div variants={itemVariants} className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
@@ -122,33 +115,6 @@ export default function Footer() {
                   </motion.a>
                 ))}
               </div>
-            </motion.div>
-
-            {/* Quick Links */}
-            <motion.div variants={itemVariants}>
-              <h3 className="text-white font-semibold text-lg mb-6">
-                {t('quickLinks')}
-              </h3>
-              <ul className="space-y-3">
-                {quickLinks.map((link) => {
-                  const navT = useTranslations('nav');
-                  return (
-                    <motion.li
-                      key={link.key}
-                      whileHover={{x: 5}}
-                      transition={{duration: 0.2}}
-                    >
-                      <Link
-                        href={link.href}
-                        className="text-white/70 hover:text-white transition-colors duration-200 flex items-center group"
-                      >
-                        <span className="w-1 h-1 bg-white/50 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
-                        {navT(link.key as any)}
-                      </Link>
-                    </motion.li>
-                  );
-                })}
-              </ul>
             </motion.div>
 
             {/* Contact Info */}

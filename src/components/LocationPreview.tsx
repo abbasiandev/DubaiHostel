@@ -198,25 +198,6 @@ export default function LocationPreview() {
           ))}
         </motion.div>
       </div>
-
-      {/* Interactive Map Button */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-        className="text-center mt-12"
-      >
-        <Link href={`/${locale}/location`}>
-          <motion.button
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="glass-card rounded-2xl px-8 py-4 text-white font-semibold hover:bg-white/20 transition-all flex items-center gap-3 mx-auto"
-          >
-            <MapPin className="w-5 h-5" />
-            {t('viewMap')}
-          </motion.button>
-        </Link>
-      </motion.div>
     </section>
   );
 }
