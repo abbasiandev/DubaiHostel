@@ -26,11 +26,11 @@ export default function RoomsSection() {
   };
 
   return (
-    <section ref={ref} className="py-20 px-4 max-w-7xl mx-auto">
+    <section ref={ref} className="py-20 px-4 w-full">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -45,7 +45,7 @@ export default function RoomsSection() {
         variants={containerVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        className="max-w-xl mx-auto"
+        className="max-w-5xl mx-auto"
       >
           <RoomCard room={roomTypes[0]} index={0} />
       </motion.div>

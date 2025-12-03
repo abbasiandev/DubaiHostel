@@ -32,7 +32,7 @@ export default function AllHostelsSection() {
   };
 
   return (
-    <section ref={ref} className="py-12 px-4 w-full">
+    <section ref={ref} className="py-12 px-4 max-w-5xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -54,7 +54,6 @@ export default function AllHostelsSection() {
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="w-full"
         >
             {filteredHostels[0] && (
                 <RoomCard room={filteredHostels[0]} index={0} />

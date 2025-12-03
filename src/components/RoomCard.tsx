@@ -108,7 +108,7 @@ export default function RoomCard({ room, index }: RoomCardProps) {
                 scale: 1.02,
                 transition: { duration: 0.3 }
             }}
-            className="glass-card w-full rounded-3xl overflow-hidden group cursor-pointer"
+            className="glass-card rounded-3xl overflow-hidden group cursor-pointer mb-8"
         >
             {/* Image Slider */}
             <div
