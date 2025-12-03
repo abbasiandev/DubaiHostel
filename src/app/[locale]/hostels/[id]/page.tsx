@@ -1,8 +1,9 @@
-import { notFound } from 'next/navigation';
+import {notFound} from 'next/navigation';
+import {setRequestLocale} from 'next-intl/server';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import HostelDetails from '@/components/HostelDetails';
-import { getHostelById } from '@/data/hostels';
+import {getHostelById, roomTypes} from '@/data/hostels';
 
 interface HostelPageProps {
   params: {
@@ -11,7 +12,15 @@ interface HostelPageProps {
   };
 }
 
-export default function HostelPage({ params }: HostelPageProps) {
+export function generateStaticParams() {
+  return roomTypes.map((room) => ({
+    id: room.id,
+  }));
+}
+
+export default function HostelPage({params}: HostelPageProps) {
+  setRequestLocale(params.locale);
+  
   const hostel = getHostelById(params.id);
 
   if (!hostel) {

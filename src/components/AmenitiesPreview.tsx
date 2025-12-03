@@ -1,16 +1,17 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useTranslations, useLocale } from 'next-intl';
-import { 
-  Wifi, Coffee, Car, Shield, Utensils, Dumbbell, 
-  Snowflake, Tv, Sofa, Users, MapPin, Clock
+import {motion} from 'framer-motion';
+import {useTranslations} from 'next-intl';
+import {
+  Wifi, Snowflake, Clock, Shield, Utensils, Tv, Coffee, Sofa, Users, MapPin
 } from 'lucide-react';
-import { useInView } from 'react-intersection-observer';
+import {useInView} from 'react-intersection-observer';
 import Link from 'next/link';
+import {useLocale} from 'next-intl';
 
 export default function AmenitiesPreview() {
   const t = useTranslations('amenities');
+  const tPage = useTranslations('amenitiesPage');
   const locale = useLocale();
   const [ref, inView] = useInView({
     threshold: 0.1,
@@ -145,11 +146,11 @@ export default function AmenitiesPreview() {
       >
         <Link href={`/${locale}/amenities`}>
           <motion.button
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{scale: 1.05, y: -2}}
+            whileTap={{scale: 0.95}}
             className="glass-card rounded-2xl px-8 py-4 text-white font-semibold hover:bg-white/20 transition-all"
           >
-            {locale === 'fa' ? 'مشاهده تمام امکانات' : 'View All Amenities'}
+            {tPage('viewAll')}
           </motion.button>
         </Link>
       </motion.div>

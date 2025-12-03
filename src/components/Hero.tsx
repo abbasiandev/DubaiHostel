@@ -124,7 +124,7 @@ export default function Hero() {
                 <MapPin className="w-6 h-6 text-blue-300" />
               </div>
               <div className="text-2xl font-bold text-white">1</div>
-              <div className="text-white/70 text-sm">Prime Location</div>
+              <div className="text-white/70 text-sm">{t('stats.location')}</div>
             </div>
             
             <div className="glass-card rounded-2xl p-6 text-center">
@@ -132,7 +132,7 @@ export default function Hero() {
                 <Star className="w-6 h-6 text-yellow-300" />
               </div>
               <div className="text-2xl font-bold text-white">4.6</div>
-              <div className="text-white/70 text-sm">Average Rating</div>
+              <div className="text-white/70 text-sm">{t('stats.rating')}</div>
             </div>
             
             <div className="glass-card rounded-2xl p-6 text-center">
@@ -140,7 +140,7 @@ export default function Hero() {
                 <div className="w-6 h-6 bg-green-400 rounded-full"></div>
               </div>
               <div className="text-2xl font-bold text-white">1000+</div>
-              <div className="text-white/70 text-sm">Happy Guests</div>
+              <div className="text-white/70 text-sm">{t('stats.guests')}</div>
             </div>
           </motion.div>
         </motion.div>

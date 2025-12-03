@@ -130,22 +130,24 @@ export default function Footer() {
                 {t('quickLinks')}
               </h3>
               <ul className="space-y-3">
-                {quickLinks.map((link) => (
-                  <motion.li
-                    key={link.key}
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Link
-                      href={link.href}
-                      className="text-white/70 hover:text-white transition-colors duration-200 flex items-center group"
+                {quickLinks.map((link) => {
+                  const navT = useTranslations('nav');
+                  return (
+                    <motion.li
+                      key={link.key}
+                      whileHover={{x: 5}}
+                      transition={{duration: 0.2}}
                     >
-                      <span className="w-1 h-1 bg-white/50 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
-                      {/* Replace with actual nav translations */}
-                      {link.key.charAt(0).toUpperCase() + link.key.slice(1)}
-                    </Link>
-                  </motion.li>
-                ))}
+                      <Link
+                        href={link.href}
+                        className="text-white/70 hover:text-white transition-colors duration-200 flex items-center group"
+                      >
+                        <span className="w-1 h-1 bg-white/50 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
+                        {navT(link.key as any)}
+                      </Link>
+                    </motion.li>
+                  );
+                })}
               </ul>
             </motion.div>
 

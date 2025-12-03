@@ -185,6 +185,6 @@ export const getAvailableRooms = (): RoomType[] => {
     return roomTypes.filter(room => room.available);
 };
 
-export const hostels = roomTypes;
+// Alias exports for backward compatibility
 export const getHostelById = getRoomById;
 export const getFeaturedHostels = getAvailableRooms;

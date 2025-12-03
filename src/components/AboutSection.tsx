@@ -1,42 +1,35 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useTranslations, useLocale } from 'next-intl';
-import { Award, Users, MapPin, Heart, Shield, Star } from 'lucide-react';
+import {motion} from 'framer-motion';
+import {useTranslations} from 'next-intl';
+import {Award, Users, MapPin, Heart, Shield, Star} from 'lucide-react';
 import Image from 'next/image';
 
 export default function AboutSection() {
-  const t = useTranslations();
-  const locale = useLocale();
+  const t = useTranslations('about');
 
   const stats = [
-    { icon: MapPin, value: '50+', label: 'Premium Locations' },
-    { icon: Users, value: '10K+', label: 'Happy Guests' },
-    { icon: Star, value: '4.8', label: 'Average Rating' },
-    { icon: Award, value: '5+', label: 'Years Experience' }
+    {icon: MapPin, value: '50+', labelKey: 'stats.locations'},
+    {icon: Users, value: '10K+', labelKey: 'stats.guests'},
+    {icon: Star, value: '4.8', labelKey: 'stats.rating'},
+    {icon: Award, value: '5+', labelKey: 'stats.experience'}
   ];
 
   const values = [
     {
       icon: Heart,
-      title: 'Hospitality Excellence',
-      titleAr: 'تعالی در مهمان‌نوازی',
-      description: 'We believe in creating memorable experiences for every guest.',
-      descriptionAr: 'ما به خلق تجربه‌های به‌یادماندنی برای هر مهمان اعتقاد داریم.'
+      titleKey: 'values.hospitality.title',
+      descriptionKey: 'values.hospitality.description'
     },
     {
       icon: Shield,
-      title: 'Safety & Security',
-      titleAr: 'ایمنی و امنیت',
-      description: 'Your safety is our top priority with 24/7 security measures.',
-      descriptionAr: 'امنیت شما اولویت اصلی ما با اقدامات امنیتی ۲۴/۷ است.'
+      titleKey: 'values.safety.title',
+      descriptionKey: 'values.safety.description'
     },
     {
       icon: Award,
-      title: 'Quality Assurance',
-      titleAr: 'تضمین کیفیت',
-      description: 'Every hostel meets our strict quality and cleanliness standards.',
-      descriptionAr: 'هر هاستل با استانداردهای سختگیرانه کیفیت و نظافت ما مطابقت دارد.'
+      titleKey: 'values.quality.title',
+      descriptionKey: 'values.quality.description'
     }
   ];
 
@@ -51,13 +44,10 @@ export default function AboutSection() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            {locale === 'fa' ? 'درباره دبی هاستل‌ز' : 'About Dubai Hostels'}
+            {t('title')}
           </h1>
           <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-            {locale === 'fa' 
-              ? 'ما متعهد به ارائه بهترین تجربه اقامت در هاستل‌های پریمیوم دبی هستیم'
-              : 'We are committed to providing the best hostel experience in Dubai\'s premium accommodations'
-            }
+            {t('subtitle')}
           </p>
         </motion.div>
 
@@ -81,7 +71,7 @@ export default function AboutSection() {
                   <stat.icon className="w-8 h-8 text-blue-300" />
                 </div>
                 <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-white/70">{stat.label}</div>
+                <div className="text-white/70">{t(stat.labelKey as any)}</div>
               </motion.div>
             ))}
           </div>
@@ -96,21 +86,11 @@ export default function AboutSection() {
             className="glass-card rounded-3xl p-8"
           >
             <h2 className="text-3xl font-bold text-white mb-6">
-              {locale === 'fa' ? 'داستان ما' : 'Our Story'}
+              {t('ourStory')}
             </h2>
             <div className="space-y-4 text-white/80 leading-relaxed">
-              <p>
-                {locale === 'fa' 
-                  ? 'دبی هاستل‌ز از ایده‌ای ساده شروع شد: ایجاد فضایی که مسافران بتوانند تجربه‌ای لوکس و مقرون‌به‌صرفه در قلب دبی داشته باشند.'
-                  : 'Dubai Hostels started with a simple idea: create spaces where travelers could experience luxury and affordability in the heart of Dubai.'
-                }
-              </p>
-              <p>
-                {locale === 'fa'
-                  ? 'با ترکیب طراحی مدرن، فناوری پیشرفته و خدمات استثنایی، ما شبکه‌ای از هاستل‌های پریمیوم ایجاد کرده‌ایم که استانداردهای جدیدی را در صنعت مهمان‌نوازی تعریف می‌کند.'
-                  : 'By combining modern design, cutting-edge technology, and exceptional service, we\'ve created a network of premium hostels that set new standards in the hospitality industry.'
-                }
-              </p>
+              <p>{t('storyText1')}</p>
+              <p>{t('storyText2')}</p>
             </div>
           </motion.div>
 
@@ -138,7 +118,7 @@ export default function AboutSection() {
           className="mb-16"
         >
           <h2 className="text-3xl font-bold text-white text-center mb-12">
-            {locale === 'fa' ? 'ارزش‌های ما' : 'Our Values'}
+            {t('ourValues')}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -155,10 +135,10 @@ export default function AboutSection() {
                   <value.icon className="w-8 h-8 text-purple-300" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">
-                  {locale === 'fa' ? value.titleAr : value.title}
+                  {t(value.titleKey as any)}
                 </h3>
                 <p className="text-white/80 leading-relaxed">
-                  {locale === 'fa' ? value.descriptionAr : value.description}
+                  {t(value.descriptionKey as any)}
                 </p>
               </motion.div>
             ))}
@@ -173,13 +153,10 @@ export default function AboutSection() {
           className="glass-card rounded-3xl p-12 text-center"
         >
           <h2 className="text-3xl font-bold text-white mb-6">
-            {locale === 'fa' ? 'ماموریت ما' : 'Our Mission'}
+            {t('ourMission')}
           </h2>
           <p className="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-            {locale === 'fa'
-              ? 'ما در تلاش هستیم تا بهترین تجربه اقامت را با ترکیب لوکس، راحتی و مقرون‌به‌صرفه بودن در زیباترین مکان‌های دبی ارائه دهیم. هدف ما خلق خاطراتی فراموش‌نشدنی برای هر مهمان است.'
-              : 'We strive to provide the best accommodation experience by combining luxury, comfort, and affordability in Dubai\'s most beautiful locations. Our goal is to create unforgettable memories for every guest.'
-            }
+            {t('missionText')}
           </p>
         </motion.div>
       </div>

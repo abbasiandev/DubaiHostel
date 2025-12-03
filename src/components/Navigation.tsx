@@ -35,7 +35,8 @@ export default function Navigation() {
 
   const toggleLanguage = () => {
     const newLocale = locale === 'en' ? 'fa' : 'en';
-    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
+    const currentPath = pathname.split('/').slice(2).join('/');
+    const newPath = `/${newLocale}${currentPath ? `/${currentPath}` : ''}`;
     window.location.href = newPath;
   };
 

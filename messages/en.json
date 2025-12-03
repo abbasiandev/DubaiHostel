@@ -7,14 +7,20 @@
     "location": "Location",
     "about": "About",
     "contact": "Contact",
-    "book": "Book Now"
+    "book": "Book Now",
+    "hostels": "Hostels"
   },
   "hero": {
     "title": "Iranian Hostel Dubai",
     "subtitle": "Your Home Away From Home in Naif District", 
     "description": "Experience authentic hospitality and modern comfort near Baniyas Metro, opposite Malabar Supermarket in Dubai's historic Naif area",
     "cta": "Check Availability",
-    "ctaSecondary": "Virtual Tour"
+    "ctaSecondary": "Virtual Tour",
+    "stats": {
+      "location": "Prime Location",
+      "rating": "Average Rating",
+      "guests": "Happy Guests"
+    }
   },
   "rooms": {
     "title": "Our Accommodations",
@@ -70,5 +76,97 @@
     "previous": "Previous",
     "showMore": "Show More",
     "showLess": "Show Less"
+  },
+  "hostels": {
+    "title": "Featured Hostels",
+    "subtitle": "Discover our handpicked selection of premium hostels across Dubai's most sought-after locations",
+    "viewDetails": "View Details",
+    "bookNow": "Book Now"
+  },
+  "allHostels": {
+    "title": "All Rooms at Iranian Hostel Dubai",
+    "subtitle": "Explore our complete collection of comfortable rooms for every budget",
+    "showing": "Showing",
+    "of": "of",
+    "rooms": "rooms",
+    "loadMore": "Load More Rooms",
+    "remaining": "remaining"
+  },
+  "specialAccommodation": {
+    "title": "Special Accommodation in Naif",
+    "subtitle": "Since Iranian Hostel Dubai has no private rooms, this nearby private room opposite Malabar Supermarket",
+    "badge": "🌟 Special Offer - Prime Location"
+  },
+  "about": {
+    "title": "About Dubai Hostels",
+    "subtitle": "We are committed to providing the best hostel experience in Dubai's premium accommodations",
+    "ourStory": "Our Story",
+    "storyText1": "Dubai Hostels started with a simple idea: create spaces where travelers could experience luxury and affordability in the heart of Dubai.",
+    "storyText2": "By combining modern design, cutting-edge technology, and exceptional service, we've created a network of premium hostels that set new standards in the hospitality industry.",
+    "ourValues": "Our Values",
+    "ourMission": "Our Mission",
+    "missionText": "We strive to provide the best accommodation experience by combining luxury, comfort, and affordability in Dubai's most beautiful locations. Our goal is to create unforgettable memories for every guest.",
+    "stats": {
+      "locations": "Premium Locations",
+      "guests": "Happy Guests",
+      "rating": "Average Rating",
+      "experience": "Years Experience"
+    },
+    "values": {
+      "hospitality": {
+        "title": "Hospitality Excellence",
+        "description": "We believe in creating memorable experiences for every guest."
+      },
+      "safety": {
+        "title": "Safety & Security",
+        "description": "Your safety is our top priority with 24/7 security measures."
+      },
+      "quality": {
+        "title": "Quality Assurance",
+        "description": "Every hostel meets our strict quality and cleanliness standards."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here to help you. Get in touch with us!",
+    "form": {
+      "title": "Send us a Message",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "Your email",
+      "subject": "Subject",
+      "subjectPlaceholder": "Message subject",
+      "message": "Message",
+      "messagePlaceholder": "Your message...",
+      "submit": "Send Message",
+      "tip": "💡 Use WhatsApp for faster response"
+    },
+    "whatsapp": {
+      "title": "WhatsApp Support",
+      "description": "Instant messaging support",
+      "action": "Chat Now"
+    },
+    "hours": {
+      "title": "Business Hours",
+      "description": "24/7 Support Available"
+    },
+    "locations": {
+      "title": "Locations",
+      "description": "Multiple premium locations across Dubai"
+    },
+    "email": {
+      "title": "Email Support",
+      "description": "info@dubaihostels.com"
+    },
+    "instant": {
+      "title": "Instant Contact",
+      "subtitle": "For instant booking and quick support",
+      "button": "WhatsApp"
+    }
+  },
+  "amenitiesPage": {
+    "viewAll": "View All Amenities"
   }
 }

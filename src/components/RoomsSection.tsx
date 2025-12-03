@@ -1,21 +1,20 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useTranslations, useLocale } from 'next-intl';
-import { roomTypes } from '@/data/hostels';
+import {motion} from 'framer-motion';
+import {useTranslations} from 'next-intl';
+import {roomTypes} from '@/data/hostels';
 import RoomCard from './RoomCard';
-import { useInView } from 'react-intersection-observer';
+import {useInView} from 'react-intersection-observer';
 
 export default function RoomsSection() {
   const t = useTranslations('rooms');
-  const locale = useLocale();
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: {opacity: 0},
     visible: {
       opacity: 1,
       transition: {
@@ -28,26 +27,26 @@ export default function RoomsSection() {
   return (
     <section ref={ref} className="py-20 px-4 w-full">
       <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
+        initial={{opacity: 0, y: 30}}
+        animate={inView ? {opacity: 1, y: 0} : {opacity: 0, y: 30}}
+        transition={{duration: 0.6}}
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            {locale === 'fa' ? 'اتاق های ما' : 'Our Rooms'}
+          {t('title')}
         </h2>
         <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            {locale === 'fa' ? 'از بین انواع اتاق‌های ما، متناسب با هر بودجه‌ای، انتخاب کنید' : 'Choose from our variety of comfortable rooms for every budget'}
+          {t('subtitle')}
         </p>
       </motion.div>
 
       <motion.div
         variants={containerVariants}
         initial="hidden"
-        animate={inView ? "visible" : "hidden"}
+        animate={inView ? 'visible' : 'hidden'}
         className="max-w-5xl mx-auto"
       >
-          <RoomCard room={roomTypes[0]} index={0} />
+        <RoomCard room={roomTypes[0]} index={0} />
       </motion.div>
     </section>
   );

@@ -1,12 +1,12 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useTranslations, useLocale } from 'next-intl';
-import { MessageCircle, Clock, MapPin, Mail, Phone } from 'lucide-react';
-import { useState } from 'react';
+import {motion} from 'framer-motion';
+import {useTranslations, useLocale} from 'next-intl';
+import {MessageCircle, Clock, MapPin, Mail} from 'lucide-react';
+import {useState} from 'react';
 
 export default function ContactSection() {
-  const t = useTranslations();
+  const t = useTranslations('contact');
   const locale = useLocale();
   const [formData, setFormData] = useState({
     name: '',
@@ -27,34 +27,25 @@ export default function ContactSection() {
   const contactInfo = [
     {
       icon: MessageCircle,
-      title: 'WhatsApp Support',
-      titleAr: 'پشتیبانی واتساپ',
-      description: 'Instant messaging support',
-      descriptionAr: 'پشتیبانی فوری پیام‌رسانی',
-      action: 'Chat Now',
-      actionAr: 'شروع چت',
+      titleKey: 'whatsapp.title',
+      descriptionKey: 'whatsapp.description',
+      actionKey: 'whatsapp.action',
       onClick: handleWhatsAppContact
     },
     {
       icon: Clock,
-      title: 'Business Hours',
-      titleAr: 'ساعات کاری',
-      description: '24/7 Support Available',
-      descriptionAr: 'پشتیبانی ۲۴/۷ در دسترس'
+      titleKey: 'hours.title',
+      descriptionKey: 'hours.description'
     },
     {
       icon: MapPin,
-      title: 'Locations',
-      titleAr: 'مکان‌ها',
-      description: 'Multiple premium locations across Dubai',
-      descriptionAr: 'چندین مکان پریمیوم در سراسر دبی'
+      titleKey: 'locations.title',
+      descriptionKey: 'locations.description'
     },
     {
       icon: Mail,
-      title: 'Email Support',
-      titleAr: 'پشتیبانی ایمیل',
-      description: 'info@dubaihostels.com',
-      descriptionAr: 'info@dubaihostels.com'
+      titleKey: 'email.title',
+      descriptionKey: 'email.description'
     }
   ];
 
@@ -69,13 +60,10 @@ export default function ContactSection() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            {locale === 'fa' ? 'تماس با ما' : 'Contact Us'}
+            {t('title')}
           </h1>
           <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-            {locale === 'fa' 
-              ? 'ما اینجا هستیم تا به شما کمک کنیم. با ما تماس بگیرید!'
-              : 'We\'re here to help you. Get in touch with us!'
-            }
+            {t('subtitle')}
           </p>
         </motion.div>
 
@@ -88,80 +76,77 @@ export default function ContactSection() {
             className="glass-card rounded-3xl p-8"
           >
             <h2 className="text-2xl font-bold text-white mb-6">
-              {locale === 'fa' ? 'پیام ارسال کنید' : 'Send us a Message'}
+              {t('form.title')}
             </h2>
             
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-white/80 text-sm mb-2">
-                    {locale === 'fa' ? 'نام' : 'Name'}
+                    {t('form.name')}
                   </label>
                   <input
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                     className="w-full glass rounded-xl px-4 py-3 text-white placeholder-white/60 border border-white/20 focus:border-white/40 focus:outline-none transition-colors"
-                    placeholder={locale === 'fa' ? 'نام شما' : 'Your name'}
+                    placeholder={t('form.namePlaceholder')}
                   />
                 </div>
                 
                 <div>
                   <label className="block text-white/80 text-sm mb-2">
-                    {locale === 'fa' ? 'ایمیل' : 'Email'}
+                    {t('form.email')}
                   </label>
                   <input
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     className="w-full glass rounded-xl px-4 py-3 text-white placeholder-white/60 border border-white/20 focus:border-white/40 focus:outline-none transition-colors"
-                    placeholder={locale === 'fa' ? 'ایمیل شما' : 'Your email'}
+                    placeholder={t('form.emailPlaceholder')}
                   />
                 </div>
               </div>
 
               <div>
                 <label className="block text-white/80 text-sm mb-2">
-                  {locale === 'fa' ? 'موضوع' : 'Subject'}
+                  {t('form.subject')}
                 </label>
                 <input
                   type="text"
                   value={formData.subject}
                   onChange={(e) => setFormData({...formData, subject: e.target.value})}
                   className="w-full glass rounded-xl px-4 py-3 text-white placeholder-white/60 border border-white/20 focus:border-white/40 focus:outline-none transition-colors"
-                  placeholder={locale === 'fa' ? 'موضوع پیام' : 'Message subject'}
+                  placeholder={t('form.subjectPlaceholder')}
                 />
               </div>
 
               <div>
                 <label className="block text-white/80 text-sm mb-2">
-                  {locale === 'fa' ? 'پیام' : 'Message'}
+                  {t('form.message')}
                 </label>
                 <textarea
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                   rows={5}
                   className="w-full glass rounded-xl px-4 py-3 text-white placeholder-white/60 border border-white/20 focus:border-white/40 focus:outline-none transition-colors resize-none"
-                  placeholder={locale === 'fa' ? 'پیام شما...' : 'Your message...'}
+                  placeholder={t('form.messagePlaceholder')}
                 />
               </div>
 
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{scale: 1.02}}
+                whileTap={{scale: 0.98}}
                 type="submit"
                 className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-4 rounded-xl transition-all"
               >
-                {locale === 'fa' ? 'ارسال پیام' : 'Send Message'}
+                {t('form.submit')}
               </motion.button>
             </form>
 
             <div className="mt-6 p-4 glass-dark rounded-xl">
               <p className="text-white/70 text-sm text-center">
-                {locale === 'fa' 
-                  ? '💡 برای پاسخ سریع‌تر از واتساپ استفاده کنید'
-                  : '💡 Use WhatsApp for faster response'
-                }
+                {t('form.tip')}
               </p>
             </div>
           </motion.div>
@@ -184,20 +169,20 @@ export default function ContactSection() {
                   
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-white mb-2">
-                      {locale === 'fa' ? info.titleAr || info.title : info.title}
+                      {t(info.titleKey as any)}
                     </h3>
                     <p className="text-white/70 mb-4">
-                      {locale === 'fa' ? info.descriptionAr || info.description : info.description}
+                      {t(info.descriptionKey as any)}
                     </p>
                     
                     {info.onClick && (
                       <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        whileHover={{scale: 1.05}}
+                        whileTap={{scale: 0.95}}
                         onClick={info.onClick}
                         className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium transition-colors"
                       >
-                        {locale === 'fa' ? info.actionAr || info.action : info.action}
+                        {t(info.actionKey as any)}
                       </motion.button>
                     )}
                   </div>
@@ -213,23 +198,20 @@ export default function ContactSection() {
               className="glass-card rounded-3xl p-8 text-center"
             >
               <h3 className="text-2xl font-bold text-white mb-4">
-                {locale === 'fa' ? 'تماس فوری' : 'Instant Contact'}
+                {t('instant.title')}
               </h3>
               <p className="text-white/80 mb-6">
-                {locale === 'fa' 
-                  ? 'برای رزرو فوری و پشتیبانی سریع'
-                  : 'For instant booking and quick support'
-                }
+                {t('instant.subtitle')}
               </p>
               
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{scale: 1.05}}
+                whileTap={{scale: 0.95}}
                 onClick={handleWhatsAppContact}
                 className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-4 rounded-xl transition-colors flex items-center justify-center gap-3"
               >
                 <MessageCircle className="w-5 h-5" />
-                {locale === 'fa' ? 'واتساپ' : 'WhatsApp'}
+                {t('instant.button')}
               </motion.button>
             </motion.div>
           </div>
