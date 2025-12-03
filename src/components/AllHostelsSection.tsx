@@ -32,7 +32,7 @@ export default function AllHostelsSection() {
   };
 
   return (
-    <section ref={ref} className="py-12 px-4 max-w-7xl mx-auto">
+    <section ref={ref} className="py-12 px-4 w-full">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -50,16 +50,16 @@ export default function AllHostelsSection() {
         </div>
       </motion.div>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
-        {filteredHostels.slice(0, visibleHostels).map((room, index) => (
-          <RoomCard key={room.id} room={room} index={index} />
-        ))}
-      </motion.div>
+        <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            className="w-full"
+        >
+            {filteredHostels[0] && (
+                <RoomCard room={filteredHostels[0]} index={0} />
+            )}
+        </motion.div>
 
       {visibleHostels < filteredHostels.length && (
         <motion.div

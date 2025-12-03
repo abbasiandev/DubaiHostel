@@ -45,11 +45,9 @@ export default function RoomsSection() {
         variants={containerVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="max-w-xl mx-auto"
       >
-        {roomTypes.map((room, index) => (
-          <RoomCard key={room.id} room={room} index={index} />
-        ))}
+          <RoomCard room={roomTypes[0]} index={0} />
       </motion.div>
 
       {/* Special Offers Banner */}

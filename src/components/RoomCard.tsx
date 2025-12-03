@@ -108,7 +108,7 @@ export default function RoomCard({ room, index }: RoomCardProps) {
                 scale: 1.02,
                 transition: { duration: 0.3 }
             }}
-            className="glass-card rounded-3xl overflow-hidden group cursor-pointer"
+            className="glass-card w-full rounded-3xl overflow-hidden group cursor-pointer"
         >
             {/* Image Slider */}
             <div
@@ -287,7 +287,7 @@ export default function RoomCard({ room, index }: RoomCardProps) {
                     className="w-full bg-green-500 rounded-xl py-3 text-white text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
                 >
                     <Phone className="w-4 h-4" />
-                    {locale === 'fa' ? 'رزرو این اتاق' : 'Book this room'}
+                    {locale === 'fa' ? 'الان رزرو کنید' : 'Book Now'}
                 </motion.button>
             </div>
         </motion.div>
