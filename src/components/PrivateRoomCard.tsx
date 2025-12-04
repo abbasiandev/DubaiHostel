@@ -115,7 +115,7 @@ export default function PrivateRoomCard() {
                 <div className="flex flex-col lg:flex-row">
                     {/* Image Slider Section */}
                     <div
-                        className="lg:w-1/2 relative h-100 cursor-pointer"
+                        className="lg:w-1/2 relative h-[400px] md:h-[500px] lg:h-[600px] cursor-pointer"
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                         onClick={() => openLightbox(currentImageIndex)}
@@ -193,13 +193,6 @@ export default function PrivateRoomCard() {
                             <div className="text-center text-white">
                                 <div className="text-lg font-bold">{currentRoom.pricing.monthly} {currentRoom.pricing.currency}</div>
                                 <div className="text-xs">{t('priceMonthly')}</div>
-                            </div>
-                        </div>
-
-                        {/* Established Badge */}
-                        <div className="absolute bottom-16 left-4 glass-accent rounded-xl px-3 py-1">
-                            <div className="text-green-400 text-sm font-semibold">
-                                Since {privateRoomData.established}
                             </div>
                         </div>
                     </div>
