@@ -3,7 +3,7 @@
 import {motion} from 'framer-motion';
 import {useTranslations} from 'next-intl';
 import {
-  Wifi, Snowflake, Clock, Shield, Utensils, Tv, Coffee, Sofa, Users, MapPin
+    Wifi, Snowflake, Clock, Shield, Utensils, Tv, Coffee, Sofa, Users, MapPin, LampDesk
 } from 'lucide-react';
 import {useInView} from 'react-intersection-observer';
 import Link from 'next/link';
@@ -34,9 +34,8 @@ export default function AmenitiesPreview() {
       icon: Sofa,
       amenities: [
         { icon: Utensils, name: 'Shared Kitchen', nameAr: 'آشپزخانه مشترک' },
-        { icon: Tv, name: 'Common TV Area', nameAr: 'منطقه تلویزیون مشترک' },
-        { icon: Coffee, name: 'Free Coffee', nameAr: 'قهوه رایگان' },
-        { icon: Sofa, name: 'Lounge Area', nameAr: 'منطقه نشیمن' },
+        { icon: Coffee, name: 'Free Tea', nameAr: 'چای رایگان' },
+        { icon: LampDesk, name: 'Desk for work', nameAr: 'میز برای کار' },
       ]
     },
     {
@@ -44,8 +43,7 @@ export default function AmenitiesPreview() {
       icon: Wifi,
       amenities: [
         { icon: Wifi, name: 'High Speed Internet', nameAr: 'اینترنت پرسرعت' },
-        { icon: Users, name: 'Co-working Space', nameAr: 'فضای کار مشترک' },
-        { icon: Tv, name: 'Smart TV', nameAr: 'تلویزیون هوشمند' },
+        { icon: Users, name: 'Working Space', nameAr: 'فضای کار ' },
       ]
     },
     {
