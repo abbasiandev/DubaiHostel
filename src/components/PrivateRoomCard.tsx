@@ -38,7 +38,7 @@ export default function PrivateRoomCard() {
 
     const handleWhatsAppContact = () => {
         const roomName = locale === 'fa' ? currentRoom.nameAr : currentRoom.name;
-        const message = `Hi! I'm interested in ${roomName}. Please send details about availability.`;
+        const message = t('whatsappMessage');
         const whatsappUrl = `https://wa.me/971521900874?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     };
