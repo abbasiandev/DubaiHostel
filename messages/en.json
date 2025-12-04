@@ -31,6 +31,7 @@
     "capacity": "Capacity",
     "price": "Starting from",
     "perNight": "per night",
+    "priceMonthly": "monthly",
     "availability": "Check Availability"
   },
   "roomCard": {
