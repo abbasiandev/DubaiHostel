@@ -74,7 +74,7 @@ export default function RoomCard({room, index}: RoomCardProps) {
 
     const handleWhatsAppContact = () => {
         const roomName = locale === 'fa' ? room.nameAr : room.name;
-        const message = t('roomCard.whatsappMessage', { roomName });
+        const message = t('whatsappMessage', { roomName });
         const whatsappUrl = `https://wa.me/971521900874?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     };

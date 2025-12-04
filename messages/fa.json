@@ -32,7 +32,8 @@
     "price": "شروع از",
     "perNight": "شبی",
     "priceMonthly": "ماهانه",
-    "availability": "بررسی موجودی"
+    "availability": "بررسی موجودی",
+    "whatsappMessage": "سلام من به {roomName} علاقه‌مند هستم. لطفاً اطلاعات موجودی و رزرو را ارسال کنید."
   },
   "roomCard": {
     "bookNow": "الان رزرو کنید",

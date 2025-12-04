@@ -32,7 +32,8 @@
     "price": "Starting from",
     "perNight": "per night",
     "priceMonthly": "monthly",
-    "availability": "Check Availability"
+    "availability": "Check Availability",
+    "whatsappMessage": "Hi! I'm interested in {roomName}. Please send details about availability."
   },
   "roomCard": {
     "bookNow": "Book Now",
