@@ -38,7 +38,7 @@ export default function PrivateRoomCard() {
 
     const handleWhatsAppContact = () => {
         const roomName = locale === 'fa' ? currentRoom.nameAr : currentRoom.name;
-        const message = t('whatsappMessage');
+        const message = t('privateRoom.whatsappMessage', { roomName });
         const whatsappUrl = `https://wa.me/971521900874?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     };
