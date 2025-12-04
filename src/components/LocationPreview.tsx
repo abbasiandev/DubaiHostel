@@ -115,8 +115,8 @@ export default function LocationPreview() {
                     transition={{duration: 0.6}}
                     className="glass-card rounded-3xl p-8"
                 >
-                    <div className="flex items-center mb-6">
-                        <div className="glass-dark rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                    <div className="flex items-center mb-6 gap-2">
+                        <div className="glass-dark rounded-full w-12 h-12 flex items-center justify-center">
                             <MapPin className="w-6 h-6 text-red-400"/>
                         </div>
                         <div>
@@ -130,23 +130,22 @@ export default function LocationPreview() {
                     </div>
 
                     <div className="space-y-4 mb-8">
-                        <div className="flex items-center text-white/80">
-                            <Clock className="w-5 h-5 mr-3 text-green-400"/>
+                        <div className="flex items-center text-white/80 gap-2">
+                            <Clock className="w-5 h-5 text-green-400"/>
                             <span>
-                {locale === 'fa'
-                    ? 'دسترسی آسان به مترو و جاذبه‌های اصلی'
-                    : 'Easy access to metro and main attractions'
-                }
-              </span>
+                                {locale === 'fa'
+                                    ? 'دسترسی آسان به مترو و جاذبه‌های اصلی'
+                                    : 'Easy access to metro and main attractions'}
+                            </span>
                         </div>
-                        <div className="flex items-center text-white/80">
-                            <Train className="w-5 h-5 mr-3 text-blue-400"/>
+
+                        <div className="flex items-center text-white/80 gap-2">
+                            <Train className="w-5 h-5 text-blue-400"/>
                             <span>
-                {locale === 'fa'
-                    ? '۳ دقیقه تا ایستگاه مترو بنی یاس'
-                    : '3 minutes to Baniyas Metro Station'
-                }
-              </span>
+                                {locale === 'fa'
+                                    ? '۳ دقیقه تا ایستگاه مترو بنی یاس'
+                                    : '3 minutes to Baniyas Metro Station'}
+                            </span>
                         </div>
                     </div>
 
