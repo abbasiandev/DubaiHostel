@@ -220,3 +220,42 @@ export const marketingContent = {
         whatsappMessage: "سلام! من به اتاق‌های خصوصی در نایف مقابل سوپرمارکت ملبار علاقه‌مند هستم. لطفاً جزئیات موجودی را ارسال کنید."
     }
 };
+
+export const keyFeatures = {
+    en: {
+        supermarket: {
+            title: "Supermarket",
+            detail: "Opposite"
+        },
+        metro: {
+            title: "Metro",
+            detail: "3-min walk"
+        },
+        monthlyRate: {
+            title: "Monthly Rate",
+            detail: "AED"
+        },
+        foodService: {
+            title: "Food Service",
+            detail: "Available"
+        }
+    },
+    fa: {
+        supermarket: {
+            title: "سوپرمارکت",
+            detail: "روبرو"
+        },
+        metro: {
+            title: "مترو",
+            detail: "۳ دقیقه پیاده‌روی"
+        },
+        monthlyRate: {
+            title: "اجاره ماهانه",
+            detail: "درهم"
+        },
+        foodService: {
+            title: "سرویس غذا",
+            detail: "موجود"
+        }
+    }
+};

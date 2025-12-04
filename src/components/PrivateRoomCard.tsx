@@ -5,7 +5,7 @@ import {useTranslations, useLocale} from 'next-intl';
 import {MapPin, Train, ShoppingBag, Phone, Calendar, ChevronLeft, ChevronRight, X} from 'lucide-react';
 import Image from 'next/image';
 import {useState, useEffect} from 'react';
-import {privateRoomData} from '@/data/privateRoom';
+import {privateRoomData, keyFeatures} from '@/data/privateRoom';
 
 export default function PrivateRoomCard() {
     const t = useTranslations('privateRoom');
@@ -184,7 +184,7 @@ export default function PrivateRoomCard() {
                         <div className="absolute top-4 right-4 glass-dark rounded-2xl px-4 py-2">
                             <div className="text-center text-white">
                                 <div className="text-2xl font-bold">{currentRoom.pricing.daily} {currentRoom.pricing.currency}</div>
-                                <div className="text-sm">per night</div>
+                                <div className="text-sm">{t('perNight')}</div>
                             </div>
                         </div>
 
@@ -192,7 +192,7 @@ export default function PrivateRoomCard() {
                         <div className="absolute top-4 left-4 glass rounded-2xl px-4 py-2">
                             <div className="text-center text-white">
                                 <div className="text-lg font-bold">{currentRoom.pricing.monthly} {currentRoom.pricing.currency}</div>
-                                <div className="text-xs">per month</div>
+                                <div className="text-xs">{t('priceMonthly')}</div>
                             </div>
                         </div>
 
@@ -219,49 +219,81 @@ export default function PrivateRoomCard() {
                                         {locale === 'fa' ? currentRoom.nameAr : currentRoom.name}
                                     </h2>
 
-                                    <div className="flex items-center text-white/80 mb-4">
+                                    <div className="flex items-center text-white/80 mb-4 gap-2">
                                         <MapPin className="w-5 h-5 mr-2"/>
                                         <span>
                                             {locale === 'fa' ? privateRoomData.location.addressAr : privateRoomData.location.address}
                                         </span>
                                     </div>
 
-                                    <p className="text-white/90 leading-relaxed mb-6">
+                                    <p className="text-white/90 leading-relaxed mb-6 ms-2">
                                         {locale === 'fa' ? currentRoom.descriptionAr : currentRoom.description}
                                     </p>
                                 </div>
 
                                 {/* Key Features */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                                    <div className="glass-dark rounded-xl p-4 flex items-center">
-                                        <ShoppingBag className="w-6 h-6 text-blue-400 mr-3"/>
+                                    <div className="glass-dark rounded-xl p-4 flex items-center gap-3">
+                                        <ShoppingBag className="w-6 h-6 text-blue-400" />
                                         <div>
-                                            <div className="text-white font-medium">Supermarket</div>
-                                            <div className="text-white/60 text-sm">Opposite</div>
+                                            <div className="text-white font-medium">
+                                                {locale === 'fa'
+                                                    ? keyFeatures.fa.supermarket.title
+                                                    : keyFeatures.en.supermarket.title}
+                                            </div>
+                                            <div className="text-white/60 text-sm">
+                                                {locale === 'fa'
+                                                    ? keyFeatures.fa.supermarket.detail
+                                                    : keyFeatures.en.supermarket.detail}
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div className="glass-dark rounded-xl p-4 flex items-center">
-                                        <Train className="w-6 h-6 text-green-400 mr-3"/>
+                                    <div className="glass-dark rounded-xl p-4 flex items-center gap-3">
+                                        <Train className="w-6 h-6 text-green-400" />
                                         <div>
-                                            <div className="text-white font-medium">Metro</div>
-                                            <div className="text-white/60 text-sm">3-min walk</div>
+                                            <div className="text-white font-medium">
+                                                {locale === 'fa'
+                                                    ? keyFeatures.fa.metro.title
+                                                    : keyFeatures.en.metro.title}
+                                            </div>
+                                            <div className="text-white/60 text-sm">
+                                                {locale === 'fa'
+                                                    ? keyFeatures.fa.metro.detail
+                                                    : keyFeatures.en.metro.detail}
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div className="glass-dark rounded-xl p-4 flex items-center">
-                                        <Calendar className="w-6 h-6 text-purple-400 mr-3"/>
+                                    <div className="glass-dark rounded-xl p-4 flex items-center gap-3">
+                                        <Calendar className="w-6 h-6 text-purple-400" />
                                         <div>
-                                            <div className="text-white font-medium">Monthly Rate</div>
-                                            <div className="text-white/60 text-sm">{currentRoom.pricing.monthly} AED</div>
+                                            <div className="text-white font-medium">
+                                                {locale === 'fa'
+                                                    ? keyFeatures.fa.monthlyRate.title
+                                                    : keyFeatures.en.monthlyRate.title}
+                                            </div>
+                                            <div className="text-white/60 text-sm">
+                                                {currentRoom.pricing.monthly} {locale === 'fa'
+                                                ? keyFeatures.fa.monthlyRate.detail
+                                                : keyFeatures.en.monthlyRate.detail}
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div className="glass-dark rounded-xl p-4 flex items-center">
-                                        <Phone className="w-6 h-6 text-orange-400 mr-3"/>
+                                    <div className="glass-dark rounded-xl p-4 flex items-center gap-3">
+                                        <Phone className="w-6 h-6 text-orange-400" />
                                         <div>
-                                            <div className="text-white font-medium">Food Service</div>
-                                            <div className="text-white/60 text-sm">Available</div>
+                                            <div className="text-white font-medium">
+                                                {locale === 'fa'
+                                                    ? keyFeatures.fa.foodService.title
+                                                    : keyFeatures.en.foodService.title}
+                                            </div>
+                                            <div className="text-white/60 text-sm">
+                                                {locale === 'fa'
+                                                    ? keyFeatures.fa.foodService.detail
+                                                    : keyFeatures.en.foodService.detail}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

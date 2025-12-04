@@ -129,22 +129,22 @@ export default function LocationPreview() {
                         </div>
                     </div>
 
-                    <div className="space-y-4 mb-8">
+                    <div className="space-y-4 mb-8 ps-2">
                         <div className="flex items-center text-white/80 gap-2">
-                            <Clock className="w-5 h-5 text-green-400"/>
+                            <Clock className="w-5 h-5 text-green-400" />
                             <span>
                                 {locale === 'fa'
-                                    ? 'دسترسی آسان به مترو و جاذبه‌های اصلی'
-                                    : 'Easy access to metro and main attractions'}
+                                        ? 'دسترسی آسان به مترو و جاذبه‌های اصلی'
+                                        : 'Easy access to metro and main attractions'}
                             </span>
                         </div>
 
                         <div className="flex items-center text-white/80 gap-2">
-                            <Train className="w-5 h-5 text-blue-400"/>
+                            <Train className="w-5 h-5 text-blue-400" />
                             <span>
                                 {locale === 'fa'
-                                    ? '۳ دقیقه تا ایستگاه مترو بنی یاس'
-                                    : '3 minutes to Baniyas Metro Station'}
+                                        ? '۳ دقیقه تا ایستگاه مترو بنی یاس'
+                                        : '3 minutes to Baniyas Metro Station'}
                             </span>
                         </div>
                     </div>
